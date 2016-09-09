@@ -1,0 +1,41 @@
+---
+- name: Test Top Compute
+  hosts: localhost
+  vars:
+    site: 'stl-non-production'
+    #project_uuid: 'aa1d9b99-4bb9-47a1-8873-53fe369d5462'
+    project_uuid: '6113e007-293d-45d3-be6b-6b78798b8f3e'
+    token: '.top_token'
+
+  tasks:
+    - name: Create Compute
+      top_compute:
+        site: "{{ site }}"
+        size: 'micro'
+        template: 'top-centos6-x86_64-0.149'
+        project_uuid: "{{ project_uuid }}"
+        subdomain: 'drifter'
+        environment: 'lenfree'
+        compute_count: '1'
+        token: "{{ token }}"
+        state: present
+
+    # - name: Delete Compute
+    #   top_compute:
+    #     site: "{{ site }}"
+    #     state: absent
+    #     #compute_uuid: a092bd87-762e-4d53-8ad9-620c3bda2708
+    #     subdomain: 'drifter'
+    #     environment: 'lenfree'
+    #     token: "{{ token }}"
+
+    # - name: Update Compute Group
+    #   top_compute:
+    #       site: "{{ site }}"
+    #       state: update
+    #       subdomain: 'drifter'
+    #       environment: 'lenfree'
+    #       ssl: 'test.ssl.test'
+    #       compute_count: '1'
+    #
+    #   # size, template, subdomain, environment, compute_uuid cannot be updated.
