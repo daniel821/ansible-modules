@@ -137,11 +137,6 @@ import time
 
 sites = {
     'localhost': 'localhost:8080',
-    'mco-production': 'trowel.core.mco.pr.top.sda.corp.telstra.com',
-    'cly-non-production':  'trowel.core.cly.np.top.corp.telstra.com',
-    'cly-production':  'trowel.core.cly.pr.top.corp.telstra.com',
-    'stl-non-production':  'trowel.core.stl.np.top.corp.telstra.com',
-    'stl-production':  'trowel.core.stl.pr.top.corp.telstra.com'
 }
 
 
